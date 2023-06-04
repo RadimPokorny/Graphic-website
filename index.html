@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Radim Pokorný</title>
+        <meta name="description" content="Radim Pokorný - Web s portfóliem, které obsahuje grafické práce a menší herní projekty. Dále zde naleznete krátké stručné informace o mně."/>
+        <meta name="keywords" content="programming, graphics, design, front-end, css, radim pokorný, portfolio"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Radim Pokorný"/>
+        <meta name="copyright" content="Radim Pokorný"/>
+        <meta name="robots" content="follow"/>
+        <link rel="stylesheet" href="style.css">
+        <meta name="language" content="English">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <div class="align-button">
+
+            <button onclick="toggleMenu();stretchFunction();" class="open-menu">
+
+                <i id="menu-button" class="fa fa-2x fa-bars" aria-hidden="true"></i>
+
+            </button>
+
+        </div>
+    
+
+        <div id="nmenu" class="navbar-menu">
+
+            <div class="container-menu" id="cont-menu">
+
+
+                <div class="hide-menu">
+
+                </div>
+
+
+                <div class="menu-items">
+
+                    <div onclick="location.href='https://www.radim-graphics.jednoduse.cz';" class="menu-item">
+                        <p>Home</p>
+                    </div>
+
+                    <div onclick="location.href='https://www.radim-graphics.jednoduse.cz/penalty-game/index.html';" class="menu-item">
+                        <p>Penalty game</p>
+                    </div>
+
+                    <div onclick="location.href='https://www.radim-graphics.jednoduse.cz/first-site/index.html';"class="menu-item">
+                        <p>Old website</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="content" class="center">
+
+
+
+            <div class="box-center">
+                <div class="background-image" style="background-image: url('1.jpg'); -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));">
+                </div>  
+                <div class="box">
+                    <div class="box-content">
+
+                        <div class="box-title">
+                            <h1 class="">Hello there!</h1>
+                        </div>
+
+                        <div class="box-paragraph">
+
+                            <p class="">I'm a graphic and website designer. I work with HTML, CSS, JavaScript, PHP, Python, and C#. If you are interested in collaborating with me or want to order something, feel free to contact me.</p>
+                        </div> 
+
+                    </div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="picture-box">
+                        <img src="profile-picture.jpg" alt="" class="profile-picture">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="box-center">
+                <div class="background-image" style="background-image: url('2.jpg'); -webkit-mask-image: -webkit-linear-gradient(bottom, rgb(0, 0, 0, 0), rgb(0, 0, 0), rgba(255, 255, 255, 0));">
+                </div> 
+
+                <div class="card-items">
+
+                    <div onclick="location.href='https://www.calendjoy.com';" style="cursor:pointer;" class="card">
+
+                        <div class="img-background">
+                            <img src="calendjoy.png" alt="" class="card-img">
+                        </div>
+
+                        <div class="card-title">
+                            <p class="">Calendjoy</p>
+                        </div>
+
+                        <div class="card-p">
+                            <p class="">Calendjoy is a brand new app with calendar features. I have participated in designing the landing page and error alerts.</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="box-center">
+
+            <div class="background-image" style="background-image: url('3.jpg'); -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));">
+            </div> 
+
+            <div class="footer">
+                <div onclick="location.href='https://www.facebook.com/radim.pokorny.737/';" style="cursor:pointer;" class="icon-item">
+                    <i class="fa fa-3x fa-facebook"></i>
+                </div>
+
+                <div onclick="location.href='https://www.instagram.com/radimpokorny04/';" style="cursor:pointer;" class="icon-item">
+                    <i class="fa fa-3x fa-instagram"></i>
+                </div>
+
+                <div onclick="location.href='https://github.com/RadimPokorny';" style="cursor:pointer;" class="icon-item">
+                    <i class="fa fa-3x fa-github"></i>
+                </div>
+
+                <div onclick="location.href='https://steamcommunity.com/id/kingradas/';" style="cursor:pointer;" class="icon-item">
+                    <i class="fa fa-3x fa-steam"></i> 
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="scroll-center">
+
+            <div class="scroll-item">
+
+                <img src="scroll-down.png" alt="" class="scroll-button">
+
+            </div>
+
+        </div>
+
+
+        <script class="" src="index.js"></script>
+        <script>
+            var scrollButton = document.querySelector('.scroll-button');
+            var scrollCenter = document.querySelector('.scroll-center');
+
+            function toggleScrollButton() {
+                if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+                    scrollCenter.style.opacity = '0';
+                    scrollCenter.style.cursor = 'default';
+                } else {
+                    scrollCenter.style.opacity = '1';
+                }
+            }
+
+            scrollButton.addEventListener('click', function() {
+                var sectionElements = document.querySelectorAll('.box-center');
+                var currentSection = Array.from(sectionElements).findIndex(function(sectionElement) {
+                    var rect = sectionElement.getBoundingClientRect();
+                    return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+                });
+
+                if (currentSection === 1) {
+                    window.scrollBy({
+                        top: document.body.offsetHeight,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.scrollBy({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+
+            window.addEventListener('scroll', toggleScrollButton);
+            
+        </script>
+    </body>
+</html>
