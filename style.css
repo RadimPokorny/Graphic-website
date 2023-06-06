@@ -148,7 +148,7 @@ a, p, h1, h2, h3, h4, h5, h6{
 
 .card{
     background-color: transparent;
-    width: 300px;
+    width: 350px;
     height: 100px;
     margin: 50px;
     transition: 0.5s;
@@ -164,8 +164,24 @@ a, p, h1, h2, h3, h4, h5, h6{
     color: var(--text);
 }
 
-.card:hover p{
+.card:hover .title-p{
     color: var(--accent);
+}
+
+.card:hover .card-desc{
+    display: flex;
+    animation: show-desc 1s forwards;
+}
+
+@keyframes show-desc {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card:hover .card-img{
@@ -381,6 +397,18 @@ a, p, h1, h2, h3, h4, h5, h6{
     font-size: 36px;
   }
 
-  .box-center, .footer, .scroll-center {
+.box-center, .footer, .scroll-center {
     z-index: 200; /* Vyšší hodnota z-index pro ostatní prvky */
+}
+
+.card-desc{
+    text-align: center;
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+.card-desc-p{
+    font-size: 24px;
+    color: var(--text);
 }
