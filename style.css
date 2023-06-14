@@ -152,16 +152,16 @@ a, p, h1, h2, h3, h4, h5, h6{
 
 .card{
     background-color: transparent;
-    width: 350px;
+    width: 380px;
     height: 100px;
-    margin: 50px;
+    margin: 20px;
     transition: 0.5s;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
+    font-size: 40px;
 }
 
 .title-p{
