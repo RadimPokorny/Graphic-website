@@ -50,14 +50,12 @@ function toggleMenu() {
         button.classList.remove("fa", "fa-2x", "fa-bars");
         button.className="fa fa-2x fa-close"; 
         menu.style.display = 'flex';
-        button.style.color = 'var(--white)';
 
     }
     else{
         button.classList.remove("fa", "fa-2x", "fa-close");
         button.className="fa fa-2x fa-bars";    
         menu.style.display = 'none';
-        button.style.color = 'var(--accent)';
     }   
   
 }
