@@ -1,4 +1,4 @@
-var scrollButton = document.querySelector('.scroll-button');
+var scrollButton = document.querySelector('#scroll-button');
 var scrollCenter = document.querySelector('.scroll-center');
 
 function toggleScrollButton() {
@@ -60,7 +60,7 @@ function toggleMenu() {
   
 }
 
-var scrollButton = document.querySelector('.scroll-button');
+var scrollButton = document.querySelector('#scroll-button');
             var scrollCenter = document.querySelector('.scroll-center');
 
             function toggleScrollButton() {
