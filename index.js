@@ -41,26 +41,30 @@ function scrollToSection(sectionNumber) {
     }
 }
 
+var isOpened = false;
+
 function toggleMenu() {
-    var button = document.getElementById("menu-button");
+    var button = document.getElementById('menu-button');
     var menu = document.getElementById("nmenu");
 
-    
-    if(button.className == "fa fa-2x fa-bars"){
-        button.classList.remove("fa", "fa-2x", "fa-bars");
-        button.className="fa fa-2x fa-close"; 
-        menu.style.display = 'flex';
-
+    if(isOpened == false){
+        isOpened = true;
+        button.style.transition = 'all 0.5s';
+        button.style.transform = 'rotate(90deg)';
+        menu.style.transition = 'all 0.5s';
+        menu.style.transform = 'translateX(0%)';
     }
     else{
-        button.classList.remove("fa", "fa-2x", "fa-close");
-        button.className="fa fa-2x fa-bars";    
-        menu.style.display = 'none';
-    }   
+        isOpened = false;
+        button.style.transform = 'rotate(0deg)';
+        menu.style.transition = 'all 0.5s';
+        menu.style.transform = 'translateX(-100%)';
+    }
+
   
 }
 
-var scrollButton = document.querySelector('#scroll-button');
+var scrollButton = document.querySelector('.scroll-item');
             var scrollCenter = document.querySelector('.scroll-center');
 
             function toggleScrollButton() {
