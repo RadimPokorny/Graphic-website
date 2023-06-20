@@ -1,3 +1,38 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "mail";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$sql = "INSERT INTO posts (name, email, message)
+VALUES ('$username', '$email', '$message')";
+
+if (mysqli_query($conn, $sql)) {
+
+} 
+
+
+mysqli_close($conn);
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -193,29 +228,3 @@
         <script class="" src="index.js"></script>
     </body>
 </html>
-
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "mail";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$username = $_SERVER['name'];
-$email = $_SERVER['email'];
-$message = $_SERVER['message'];
-
-$sql = "INSERT INTO posts (name, email, message)
-VALUES ('$username', '$email', '$message')";
-
-$conn->exec($sql);
-
-?>

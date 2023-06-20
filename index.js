@@ -64,15 +64,13 @@ function toggleMenu() {
   
 }
 
-var scrollButton = document.querySelector('.scroll-item');
-            var scrollCenter = document.querySelector('.scroll-center');
+var scrollButton = document.querySelector('#scroll-button');
 
             function toggleScrollButton() {
-                if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-                    scrollCenter.style.opacity = '0';
-                    scrollCenter.style.cursor = 'default';
+                if (document.documentElement.clientHeight + window.pageYOffset >= document.body.offsetHeight) {
+                    scrollCenter.style.display = 'none';
                 } else {
-                    scrollCenter.style.opacity = '1';
+                    scrollCenter.style.display = 'flex';
                 }
             }
 
