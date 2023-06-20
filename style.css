@@ -8,6 +8,12 @@
     --text: #dfe9fb;
 }
 
+input, textarea { outline: none; }
+
+textarea {
+    resize: none;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -194,6 +200,80 @@ a, p, h1, h2, h3, h4, h5, h6{
     text-align: center;
     font-size: 40px;
     font-family: var(--font);
+}
+
+.center-form{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-cm{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-cm label{
+    color: var(--text);
+    margin-top: 20px;
+    font-family: var(--font);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.c-username{
+    border: 2px solid var(--accent);
+    background-color: var(--black);
+    height: 40px;
+    width: 250px;
+    font-size: 24px;
+    color: var(--text);
+    font-family: var(--font);
+    text-align: center;
+}
+
+.c-email{
+    border: 2px solid var(--accent);
+    background-color: var(--black);
+    height: 40px;
+    width: 250px;
+    font-size: 24px;
+    color: var(--text);
+    font-family: var(--font);
+    text-align: center;
+}
+
+.message{
+    border: 2px solid var(--accent);
+    background-color: var(--black);
+    height: 100px;
+    width: 250px;
+    font-size: 24px;
+    color: var(--text);
+    font-family: var(--font);
+    text-align: center;
+}
+
+.submit{
+    background-color: var(--accent);
+    font-family: var(--font);
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border: 0;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.submit:hover{
+    cursor: pointer;
+    color: var(--text);
 }
 
 .title-p{
@@ -533,10 +613,6 @@ a, p, h1, h2, h3, h4, h5, h6{
         display: flex;
     }
 
-    .footer{
-        flex-direction: column;
-    }
-
     .sm-header{
         display: none;
     }
@@ -547,6 +623,10 @@ a, p, h1, h2, h3, h4, h5, h6{
     
     .creator-p{
         font-size: 40px;
+    }
+
+    .icon-item{
+        margin: 20px;
     }
 
 }
@@ -573,13 +653,11 @@ a, p, h1, h2, h3, h4, h5, h6{
     }
 
     .footer .fa{
-        color: var(--text);
-        text-decoration: none;
         font-size: 64px;
     }
 
     .icon-item{
-        margin: 20px;
+        margin: 10px;
     }
 
     .menu-item p {
@@ -625,6 +703,14 @@ a, p, h1, h2, h3, h4, h5, h6{
     .port-item{
         width: 320px;
         height: 320px;
+    }
+
+    .icon-item{
+        margin: 2px;
+    }
+
+    .footer .fa{
+        font-size: 48px;
     }
 
 }

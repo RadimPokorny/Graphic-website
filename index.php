@@ -32,7 +32,7 @@
         <div id="nmenu" class="navbar-menu">
 
             <div class="container-menu" id="cont-menu">
-                
+
                 <div class="menu-items">
 
                     <div onclick="location.href='http://www.radim-graphics.jednoduse.cz';" class="menu-item">
@@ -68,7 +68,24 @@
                 </div>
 
                 <div class="creator-credit">
-                    <p class="creator-p">© 2023 Radim Pokorný</p>
+                    <div class="footer">
+                        <div onclick="location.href='https://www.facebook.com/radim.pokorny.737/';" style="cursor:pointer;" class="icon-item">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+        
+                        <div onclick="location.href='https://www.instagram.com/radimpokorny04/';" style="cursor:pointer;" class="icon-item">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+        
+                        <div onclick="location.href='https://github.com/RadimPokorny';" style="cursor:pointer;" class="icon-item">
+                            <i class="fa fa-github"></i>
+                        </div>
+        
+                        <div onclick="location.href='https://steamcommunity.com/id/kingradas/';" style="cursor:pointer;" class="icon-item">
+                            <i class="fa fa-steam"></i> 
+                        </div>
+        
+                    </div>
                 </div>
 
             </div>
@@ -130,31 +147,33 @@
         <div class="box-center">
 
             <div class="media-header">
-                <p class="sm-header">Social Media:</p>
+                <p class="sm-header">Contact me:</p>
+            </div>
+
+            <div class="center-form">
+
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-cm">
+                    <label for="" class="username-p">Name:</label>
+                    <input type="text" name="name" class="c-username">
+                    <label for="" class="email-p">E-mail:</label>
+                    <input type="text" name="email" class="c-email">
+                    <label for="" class="message-p">Your message:</label>
+                    <textarea name="message" class="message">
+
+                    </textarea>
+
+                    <button type="submit"class="submit">Submit</button>
+
+
+                </form>
+
             </div>
 
 
             <div class="background-image" style="background-image: url('3.jpg'); -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));">
             </div> 
 
-            <div class="footer">
-                <div onclick="location.href='https://www.facebook.com/radim.pokorny.737/';" style="cursor:pointer;" class="icon-item">
-                    <i class="fa fa-facebook"></i>
-                </div>
-
-                <div onclick="location.href='https://www.instagram.com/radimpokorny04/';" style="cursor:pointer;" class="icon-item">
-                    <i class="fa fa-instagram"></i>
-                </div>
-
-                <div onclick="location.href='https://github.com/RadimPokorny';" style="cursor:pointer;" class="icon-item">
-                    <i class="fa fa-github"></i>
-                </div>
-
-                <div onclick="location.href='https://steamcommunity.com/id/kingradas/';" style="cursor:pointer;" class="icon-item">
-                    <i class="fa fa-steam"></i> 
-                </div>
-
-            </div>
+            
 
 
 
@@ -174,3 +193,29 @@
         <script class="" src="index.js"></script>
     </body>
 </html>
+
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "mail";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$username = $_SERVER['name'];
+$email = $_SERVER['email'];
+$message = $_SERVER['message'];
+
+$sql = "INSERT INTO posts (name, email, message)
+VALUES ('$username', '$email', '$message')";
+
+$conn->exec($sql);
+
+?>
